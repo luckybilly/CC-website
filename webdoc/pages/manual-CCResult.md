@@ -1,3 +1,3 @@
-## IComponent介绍
+## 类介绍：CCResult.java
 
-
+文档撰写中...

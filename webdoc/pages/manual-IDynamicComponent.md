@@ -1,3 +1,3 @@
-## IComponent介绍
+## 类介绍: IDynamicComponent.java
 
-
+文档撰写中...

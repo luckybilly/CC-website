@@ -1,3 +1,3 @@
-## IComponent介绍
+## 类介绍: IGlobalInterceptor.java
 
-
+文档撰写中...

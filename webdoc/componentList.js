@@ -79,7 +79,7 @@ export default {
           name: 'IParamJsonConverter',
           path: '/manual-IParamJsonConverter'
         },{
-          name: '多进程注解',
+          name: '开启多进程支持',
           path: '/manual-multi-process'
         }
       ]
