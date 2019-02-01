@@ -1,0 +1,233 @@
+@import './markdown.css';
+html{
+  width: 100%;
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Microsoft YaHei;
+}
+.router-link-active {
+  color: #F92772 !important;
+}
+#app {
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+#app .main-header {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  /*-webkit-box-shadow: 0 2px 8px #f0f1f2;
+  box-shadow: 0 2px 8px #f0f1f2;*/
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+  z-index: 10;
+  height: 65px;
+  color: #444;
+}
+#app .main-header .main-header-logo {
+  margin-left: 40px;
+  /*width: 45px;*/
+  display: inline-block;
+  height: 100%;
+}
+#app .main-header .main-header-logo img {
+  width: 30px;
+  position: relative;
+  top: 8px;
+}
+#app .main-header .main-header-title {
+  margin-left: 40px;
+  height: 65px;
+  line-height: 65px;
+  font-size: 18px;
+  display: inline-block;
+  font-weight: bold;
+  color: #0088cc;
+}
+.main-header-desc{
+  font-size: 12px;
+  margin-left: 5px;
+  color: #999;
+}
+.nick{
+  opacity: .4;
+  font-size: 13px;
+}
+#app .main-header .main-header-nav {
+  margin: 0;
+  padding: 0;
+  float: right;
+  height: 100%;
+  background: transparent;
+}
+#app .main-header .main-header-nav li {
+  list-style: none;
+  color: #314659;
+  height: 100%;
+  line-height: 65px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-width: 72px;
+  /*border-top: 2px solid transparent;*/
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 15px;
+  float: left;
+/*  -webkit-transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+  border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1),
+  border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);*/
+}
+#app .main-header .main-header-nav li > a{
+  color: #314659;
+}
+#app .main-header .main-header-nav li:hover {
+  color: #5B94DC;
+  border-bottom: 1px solid #5B94DC;
+}
+.github:hover{
+  border: none !important;
+}
+#app .main-header .main-header-nav li.active {
+  color: #5B94DC;
+  border-bottom: 1px solid #5B94DC;
+}
+#app .main- {
+  flex: 1;
+  position: relative;
+  /*padding: 40px 0 0;*/
+  margin-left: 0;
+  margin-right: 0;
+  height: auto;
+  zoom: 1;
+  display: flex;
+  flex-direction: row;
+}
+#app .main- .main--left {
+  padding: 5px 0;
+  border-right: 1px solid #e8e8e8;
+  /*height: calc(100vh - 65px);*/
+  overflow-y: scroll;
+  float: left;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 auto;
+  flex: 0 0 auto;
+}
+#app .main- .main--left ul {
+  width: 250px;
+  margin: 0;
+  padding: 0;
+}
+#app .main- .main--left ul li {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  font-size: 14px;
+  color: #455a64;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+#app .main- .main--left ul .group-title {
+  font-size: 16px;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 0 0 40px;
+  color: #999999;
+}
+#app .main- .main--left ul .group-title:hover {
+  background-color: #F0F0F0 !important;
+}
+#app .main- .main--left ul li a {
+  font-size: 14px;
+  color: #5B94DC;
+  line-height: 30px;
+  height: 30px;
+  margin: 0;
+  padding: 0 0 0 65px;
+  text-decoration: none;
+  display: block;
+  position: relative;
+  -webkit-transition: 0.15s ease-out;
+  transition: 0.15s ease-out;
+  /*border-right: 1px solid #e8e8e8;*/
+}
+#app .main- .main--left ul li:hover {
+  background: #f3f3f3;
+}
+#app .main- .main--left ul li a:hover {
+  color: #5B94DC;
+}
+#app .main- .main--left ul li.main--link-group {
+  height: auto;
+}
+#app .main- .main--left ul li.main--link-group a:hover {
+  color: #333;
+  cursor: default;
+}
+#app .main- .main--left ul li.main--link-group ul a {
+  display: block;
+  height: 40px;
+  color: #444;
+  line-height: 40px;
+  font-size: 14px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-weight: 400;
+}
+#app .main- .main--left ul li.main--link-group ul a:hover {
+  color: #5B94DC;
+  cursor: pointer;
+}
+#app .main- .main--right {
+  flex: 1;
+  overflow-y: scroll;
+  /*padding: 20px 84px 140px 20px;*/
+}
+#app .main- .main--right a {
+  color: #5B94DC;
+  text-decoration: none;
+}
+.markdown{
+  /*max-width: 800px;*/
+}
+.sidebar-toggel{
+  width: 20px;
+  height: 20px;
+  position: fixed;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar-hidden{
+  width: 0px;
+}
+.qr-block{
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 100px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.qr-block > p {
+  font-size: 12px;
+  color: #666;
+  margin-top: 10px;
+}
