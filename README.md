@@ -2,6 +2,12 @@
 
 ## 关于 CC
 
+[点这里访问CC的文档](https://luckybilly.github.io/CC-website/)
+
+[点这里访问CC的文档](https://luckybilly.github.io/CC-website/)
+
+[点这里访问CC的文档](https://luckybilly.github.io/CC-website/)
+
 CC是一套Android的组件化框架，由CC核心API类库和cc-register插件组成
 
 模块|CC|cc-register
