@@ -113,7 +113,7 @@ body {
   flex-direction: row;
 }
 #app .main- .main--left {
-  padding: 5px 0;
+  padding: 5px 0 30px;
   border-right: 1px solid #e8e8e8;
   /*height: calc(100vh - 65px);*/
   overflow-y: scroll;
@@ -142,7 +142,7 @@ body {
   font-weight: bold;
   height: 40px;
   line-height: 40px;
-  padding: 0 0 0 40px;
+  padding: 0 0 0 20px;
   color: #999999;
 }
 #app .main- .main--left ul .group-title:hover {
@@ -151,10 +151,10 @@ body {
 #app .main- .main--left ul li a {
   font-size: 14px;
   color: #5B94DC;
-  line-height: 30px;
-  height: 30px;
+  line-height: 20px;
+  height: 20px;
   margin: 0;
-  padding: 0 0 0 65px;
+  padding: 0 0 0 35px;
   text-decoration: none;
   display: block;
   position: relative;
@@ -200,7 +200,7 @@ body {
   text-decoration: none;
 }
 .markdown{
-  /*max-width: 800px;*/
+  max-width: 800px;
 }
 .sidebar-toggel{
   width: 20px;

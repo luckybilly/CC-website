@@ -22,3 +22,4 @@
     - 组件调用处、回调处、组件实现处的crash全部在框架内部catch住
     - 同步返回或异步回调的CCResult对象一定不为null，避免空指针
 16. 支持在组件中为不同actionName指定是否在主线程中运行
+17. 支持组件调用的转发（BaseForwardInterceptor）
