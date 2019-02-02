@@ -101,13 +101,17 @@ public class ComponentA implements IComponent {
 
 ### 开始使用
 
-CC于2018年9月16日升级到2.0.0版，重构了跨进程通信机制和自动注册插件，并且集成方式有了比较大的变化，此文档仅针对2.x.x版本。
+CC于2018年9月16日升级到2.0.0版，重构了跨进程通信机制和自动注册插件，并且集成方式有了也有了一些变化(组件的创建和调用方式不变)，此文档仅针对2.x.x版本。
 
 如果您使用的是1.x.x版CC，可以参照[2.0版升级指南][2]中的说明来升级到2.x.x版本
 
 请访问[集成要求][3]页面，查看集成所需要的前提条件。
 
-然后可以从[集成组件化开发环境][4]页面学习如何集成组件化开发环境，然后再学习如何[创建组件][5]和[调用组件][6]。
+然后可以从[集成组件化开发环境][4]页面学习如何集成CC的组件化开发环境，然后再学习如何[创建组件][5]和[调用组件][6]。
+
+之后，您可以通过[ICCInterceptor][8]页面以及[IGlobalCCInterceptor][9]页面学习如何在CC中使用拦截器
+
+在[CC][10]和[CCResult][11]页面，您将了解到更丰富的组件调用及组件调用结果相关的API
 
 
 
@@ -118,3 +122,8 @@ CC于2018年9月16日升级到2.0.0版，重构了跨进程通信机制和自动
 [5]: #/integration-create-component
 [6]: #/integration-call-component
 [7]: #/componentize-gradually
+[8]: #/manual-ICCInterceptor
+[9]: #/manual-IGlobalCCInterceptor
+[10]: #/manual-CC
+[11]: #/manual-CCResult
+
