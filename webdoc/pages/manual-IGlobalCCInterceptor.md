@@ -31,9 +31,9 @@ public interface IGlobalCCInterceptor extends ICCInterceptor {
 如果您的某个全局拦截器需要自己指定注册/注销时机，可创建一个IGlobalInterceptor的子接口类，然后再实现该子接口来创建全局拦截器。这样，就不会在编译阶段被自动注册到`GlobalCCInterceptorManager`中去了。然后可以通过以下代码来动态地注册/注销它：
 ```java
 //注册一个全局拦截器到CC框架中
-void registerGlobalInterceptor(IGlobalCCInterceptor interceptor) 
+CC.registerGlobalInterceptor(IGlobalCCInterceptor interceptor) 
 //注销一个全局拦截器
-void unregisterGlobalInterceptor(IGlobalCCInterceptor interceptor) 
+CC.unregisterGlobalInterceptor(IGlobalCCInterceptor interceptor) 
 ```
  
 ### 注意事项

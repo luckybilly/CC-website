@@ -157,7 +157,7 @@ public class ComponentA implements IComponent {
         在return之前调用CC.sendCCResult(callId, result)返回本次组件调用结果，否则系统会返回-10的状态码给调用方
     ~~~
 - <font color=red>不管是同步实现还是异步实现，每次onCall被调用后，必须调用CC.sendCCResult(callId, result)将调用结果发送给调用方</font>
-    - 要确保在任何逻辑分支下都会调用，例如：if-elseif-else, try-catch-finally, activity被关闭导致服务中断等
+    - 要确保在任何逻辑分支下都会调用，例如：if-elseif-else, switch-case-default, try-catch-finally, activity被关闭导致服务中断等
     - 原理是：对于外部来说组件相当于黑盒，每次调用都需要有一个调用结果返回
     - <font color=red>这一点是许多初学者容易忽视的，需要足够重视，code review时建议重点检查</font>
 
