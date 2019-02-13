@@ -79,7 +79,7 @@ public class JsBridge {
 
 ```
 
-是不是超级简单？
+是不是超级简单？ demo可参考[这里][jsbridge_demo]
 
 这样做的好处有：
 1. jsbridge回归初心：只是作为一个桥梁。
@@ -104,9 +104,9 @@ public class JsBridge {
 
 具体实现方式可参考如下开源库：
 
-- 透明Activity方式实现的权限申请库:[AndPermission](https://github.com/yanzhenjie/AndPermission), 参考类：[PermissionActivity.java](https://github.com/yanzhenjie/AndPermission/blob/master/permission/src/main/java/com/yanzhenjie/permission/PermissionActivity.java)
+- 透明Activity方式实现的权限申请库:[AndPermission][1], 参考类：[PermissionActivity.java][2]
 
-- Fragment方式实现的权限申请库: [RxPermissions](https://github.com/tbruyelle/RxPermissions),参考类：[RxPermissions.java](https://github.com/tbruyelle/RxPermissions/blob/master/lib/src/main/java/com/tbruyelle/rxpermissions/RxPermissions.java)  
+- Fragment方式实现的权限申请库: [RxPermissions][3],参考类：[RxPermissions.java][4]  
 
 #### 2. js调用的有些功能需要用户登录后才能用，如何加入登录条件判断？
 
@@ -114,7 +114,7 @@ public class JsBridge {
 
 需要在组件内部完成登录状态校验、打开登录界面、登录完成后再执行组件实际功能。
 
-具体实现可参考另一篇文章： [CC框架实践(1)：实现登录成功再进入目标界面功能](https://www.imooc.com/article/23155)
+具体实现可参考： [先登录再跳转到目标界面][5]
 
 #### 3. 没有使用CC框架的情况下，如何让jsBridge实现类似效果？
 在没有使用CC框架的情况下，也可以实现类似效果的。思路如下：
@@ -170,3 +170,13 @@ public class JsCallManager {
 
 
 本文介绍了在CC框架下用组件调用的方式让jsBridge实现跟具体业务完全解耦。并给出了非CC框架环境下实现类似效果的思路。
+
+[jsbridge_demo]: https://github.com/luckybilly/CC/blob/master/demo_component_jsbridge/src/main/java/com/billy/cc/demo/component/jsbridge/BridgeWebViewHelper.java
+[1]: https://github.com/yanzhenjie/AndPermission
+[2]: https://github.com/yanzhenjie/AndPermission/blob/master/permission/src/main/java/com/yanzhenjie/permission/PermissionActivity.java
+[3]: https://github.com/tbruyelle/RxPermissions
+[4]: https://github.com/tbruyelle/RxPermissions/blob/master/lib/src/main/java/com/tbruyelle/rxpermissions/RxPermissions.java
+[5]: #/practice_1
+
+
+

@@ -199,6 +199,10 @@ body {
   color: #5B94DC;
   text-decoration: none;
 }
+#app .main- .main--right a:hover {
+  color: #F7276B;
+  text-decoration: none;
+}
 .markdown{
   max-width: 800px;
 }

@@ -24,6 +24,9 @@ public interface IMainThread {
     Boolean shouldActionRunOnMainThread(String actionName, CC cc);
 }
 ```
+
+#### 作用介绍
+
 举个例子：
 
 假设有一个数据提供的组件

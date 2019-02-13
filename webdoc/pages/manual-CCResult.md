@@ -99,14 +99,23 @@ CCResult.errorUnsupportedActionName();
 
 CCResult作为一次组件调用的结果，调用方需要从中提取组件调用是否成功等信息
 ```java
-boolean isSuccess() //组件调用是否成功
-String getErrorMessage() //错误信息
-int getCode() //获取状态码
-Map<String, Object> getDataMap() //获取返回的数据（以键值对的方式存储）
-<T> T getDataItem(String key) //从data中取出key对应的value，泛型指定返回值的类型
-<T> T getDataItem(String key, T defaultValue) //同上，如果数据为null，则返回默认值
-<T> T getDataItemWithNoKey() //获取通过CCResult.successWithNoKey(value)返回的数据，泛型指定返回值的类型
-<T> T getDataItemWithNoKey(T defaultValue) //同上，如果数据为null，则返回默认值
+//组件调用是否成功
+boolean isSuccess() 
+//错误信息
+String getErrorMessage() 
+//获取状态码
+int getCode() 
+
+//获取返回的数据（以键值对的方式存储）
+Map<String, Object> getDataMap() 
+//从data中取出key对应的value，泛型指定返回值的类型
+<T> T getDataItem(String key) 
+//同上，如果数据为null，则返回默认值
+<T> T getDataItem(String key, T defaultValue) 
+//获取通过CCResult.successWithNoKey(value)返回的数据，泛型指定返回值的类型
+<T> T getDataItemWithNoKey() 
+//同上，如果数据为null，则返回默认值
+<T> T getDataItemWithNoKey(T defaultValue) 
 ```
 
 

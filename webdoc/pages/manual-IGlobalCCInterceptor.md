@@ -3,12 +3,12 @@
 
 ### 什么是"全局"拦截器，与"普通"拦截器的区别是什么？
 
-区别于"普通"拦截器需要在构建CC对象时通过`ccbuilder.addInterceptor(interceptor)`进行添加，全局拦截器会自动注册到`GlobalCCInterceptorManager`中进行管理
+区别于"普通"拦截器需要在构建CC对象时通过`ccBuilder.addInterceptor(interceptor)`进行添加，全局拦截器会自动注册到`GlobalCCInterceptorManager`中进行管理
 
 区别于"普通"拦截器只对本次组件调用有效，全局拦截器将作用于每一次组件调用
 
 ~~~
-注：如果在构建CC对象时设置了ccbuilder.withoutGlobalInterceptor()，那本次组件调用将不会执行所有全局拦截器
+注：如果在构建CC对象时设置了ccBuilder.withoutGlobalInterceptor()，那本次组件调用将不会执行所有全局拦截器
 ~~~
 
 区别于"普通"拦截器是根据添加的顺序来决定执行的顺序，全局拦截器在实现类中需要为其指定优先级

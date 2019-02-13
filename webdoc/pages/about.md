@@ -115,13 +115,13 @@ CC于2018年9月16日升级到2.0.0版，重构了跨进程通信机制和自动
 
 
 
-[1]: #/router_vs_bus
+[1]: #/article-router_vs_bus
 [2]: #/1.x_to_2.x
 [3]: #/requirements
 [4]: #/integration
 [5]: #/integration-create-component
 [6]: #/integration-call-component
-[7]: #/componentize-gradually
+[7]: #/article-componentize-gradually
 [8]: #/manual-ICCInterceptor
 [9]: #/manual-IGlobalCCInterceptor
 [10]: #/manual-CC

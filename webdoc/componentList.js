@@ -39,7 +39,13 @@ export default {
         },{
           name: '4. 组件独立运行调试',
           path: '/integration-component-run-alone'
-        },{
+        }
+      ]
+    },
+    {
+      name: '大版本升级',
+      list: [
+        {
           name: '2.0版升级指南',
           path: '/1.x_to_2.x'
         }
@@ -79,6 +85,9 @@ export default {
           name: 'IParamJsonConverter',
           path: '/manual-IParamJsonConverter'
         },{
+          name: 'BaseForwardInterceptor',
+          path: '/manual-BaseForwardInterceptor'
+        },{
           name: '开启多进程支持',
           path: '/manual-multi-process'
         }
@@ -104,13 +113,16 @@ export default {
       list: [
         {
           name: 'CC实现原理',
-          path: '/cc-principle'
+          path: '/article-cc-principle'
         },{
           name: '使用CC进行渐进式组件化改造',
-          path: '/componentize-gradually'
+          path: '/article-componentize-gradually'
         },{
           name: '路由 VS 总线',
-          path: '/router_vs_bus'
+          path: '/article-router_vs_bus'
+        },{
+          name: '组件化开源框架对比',
+          path: '/article-componentize_contrast'
         }
       ]
     }
