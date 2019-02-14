@@ -57,24 +57,9 @@ public interface IComponent {
 
 动态组件类需要实现IDynamicComponent接口，具体说明请戳[这里][2]
 
-### 自定义子接口或Base基类
+### 自定义Base基类
 
 直接实现IComponent接口(注意：是直接实现）的组件类会自动注册到ComponentManager中进行管理
-
-**如果需要自定义一个IComponent的子接口，组件类直接实现子接口**
-
-请在你根目录下的`cc-settings-2.gradle`文件中添加以下代码，并修改其中`scanInterface`的类名：
-
-```groovy
-//自动注册组件
-ccregister.registerInfo.add([ 
-  'scanInterface'             : 'your.pkg.IYourComponent' //改成你的子接口类名
-  , 'codeInsertToClassName'   : 'com.billy.cc.core.component.ComponentManager'
-  , 'registerMethodName'      : 'registerComponent'
-  //排除的类，支持正则表达式（包分隔符需要用/表示，不能用.）
-  , 'exclude'                 : [ 'com.billy.cc.core.component.'.replaceAll("\\.", "/") + ".*" ]
-])
-```
 
 
 **如果需要自定义一个基类**
