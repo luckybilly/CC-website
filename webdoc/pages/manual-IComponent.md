@@ -14,25 +14,18 @@ CC的每一次组件调用，针对的是一个对应的组件类，不管这个
 
     组件module创建组件类来定义它将向外提供哪些服务(服务名称：actionName)以及如何提供这些服务(参数及返回值协议)
 
-### 组件类的定义
+### IComponent接口的定义
 
-实现IComponent接口，实现接口的2个方法：
-- String getName() 
-    - 指定组件的名称（字符串类型）
-- boolean onCall(CC cc) 
-    - 组件被调用时执行的方法
-    - 组件在此方法内向外暴露自身提供的服务
-    - 通过cc.getActionName()获取当前被调用的服务名称
-    - 通过
+
+__注：请特别注意onCall方法返回值的说明（初学者容易忽视，Code Review时请重点检查）__
 
 ```java
 /**
  * 组件接口
  * 注意：
- *      1. 此接口的实现类代表的是一个组件暴露给外部调用的入口
- *      2. 实现类必须含有一个无参构造方法，以供自动注册插件进行代码注入
- *      3. 实现类有且只有一个对象会被注册到组件库中，故不能为Activity、Fragment等(可以改用动态组件注册{@link IDynamicComponent})
- * @author billy.qi
+ *   1. 此接口的实现类代表的是一个组件暴露给外部调用的入口
+ *   2. 实现类必须含有一个无参构造方法，以供自动注册插件进行代码注入
+ *   3. 实现类有且只有一个对象会被注册到组件库中，故不能为Activity、Fragment等
  */
 public interface IComponent {
 
@@ -45,7 +38,7 @@ public interface IComponent {
     /**
      * 调用此组件时执行的方法（此方法只在LocalCCInterceptor中被调用）
      * 注：执行完成后必须调用CC.sendCCResult(callId, CCResult.success(result));
-     * cc.getContext() android的context
+     * cc.getContext() android的context，在组件被跨进程调用时，返回application对象
      * cc.getAction() 调用的action
      * cc.getParams() 调用参数
      * cc.getCallId() 调用id，用于取消调用
@@ -58,3 +51,53 @@ public interface IComponent {
 }
 ```
 
+### 创建组件类
+
+组件类（静态组件类）需要直接实现IComponent接口，具体创建方式及注意事项请参考[2. 创建组件][1]
+
+
+### 自定义子接口或Base基类
+
+直接实现IComponent接口(注意：是直接实现）的组件类会自动注册到ComponentManager中进行管理
+
+**如果需要自定义一个IComponent的子接口，组件类直接实现子接口**
+
+请在你根目录下的`cc-settings-2.gradle`文件中添加以下代码，并修改其中`scanInterface`的类名：
+
+```groovy
+//自动注册组件
+ccregister.registerInfo.add([ 
+  'scanInterface'             : 'your.pkg.IYourComponent' //改成你的子接口类名
+  , 'codeInsertToClassName'   : 'com.billy.cc.core.component.ComponentManager'
+  , 'registerMethodName'      : 'registerComponent'
+  //排除的类，支持正则表达式（包分隔符需要用/表示，不能用.）
+  , 'exclude'                 : [ 'com.billy.cc.core.component.'.replaceAll("\\.", "/") + ".*" ]
+])
+```
+
+
+**如果需要自定义一个基类**
+
+请在你根目录下的`cc-settings-2.gradle`文件中添加以下代码，并修改其中`scanSuperClasses`的类名：
+
+注意：如果基类不是抽象的(abstract)，也会被视作一个组件类被自动注册到ComponentManager中进行管理
+
+```groovy
+//自动注册组件
+ccregister.registerInfo.add([ 
+  'scanInterface'             : 'com.billy.cc.core.component.IComponent'
+  //改成你的基类名称，可以有多个，用英文逗号隔开
+  , 'scanSuperClasses'        : ['your.pkg.YourBaseComponent', 'your.pkg.YourBaseComponent2'] 
+  , 'codeInsertToClassName'   : 'com.billy.cc.core.component.ComponentManager'
+  , 'registerMethodName'      : 'registerComponent'
+  //排除的类，支持正则表达式（包分隔符需要用/表示，不能用.）
+  , 'exclude'                 : [ 'com.billy.cc.core.component.'.replaceAll("\\.", "/") + ".*" ]
+])
+```
+
+未完待续。。。
+
+
+
+
+[1]: #/integration-create-component

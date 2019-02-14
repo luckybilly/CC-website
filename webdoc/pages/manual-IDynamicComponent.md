@@ -8,6 +8,9 @@
 1. 动态组件需要实现接口: IDynamicComponent
 2. 需要手动调用 CC.registerComponent(component) , 类似于BroadcastReceiver动态注册
 3. 需要手动调用 CC.unregisterComponent(component), 类似于BroadcastReceiver动态反注册
+4. 动态组件在注册它的进程中运行
+	- 动态组件不支持`@SubProcess`及`@AllProcess`注解
+	- 如：在主进程中调用`CC.registerComponent(dyComponent);`, dyComponent 将在主进程中运行
 4. 其它用法跟静态组件一样
 
 接口定义
@@ -29,11 +32,4 @@ public interface IDynamicComponent extends IComponent {
 - activity、fragment等自有生命周期的对象
 
 
-
-
-##### 4.3 动态组件在注册它的进程中运行
-
-动态组件不支持`@SubProcess`及`@AllProcess`注解
-
-例如：在主进程中调用`CC.registerComponent(dynamicComponent);`,dynamicComponent将在主进程中运行
-    
+未完待续。。。

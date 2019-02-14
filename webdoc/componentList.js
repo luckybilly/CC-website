@@ -90,6 +90,9 @@ export default {
         },{
           name: '开启多进程支持',
           path: '/manual-multi-process'
+        },{
+          name: 'IActionProcessor',
+          path: '/manual-IActionProcessor'
         }
       ]
     },
