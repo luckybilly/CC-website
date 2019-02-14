@@ -1,8 +1,10 @@
 ## 类介绍: IDynamicComponent.java
 
-动态组件
+### 作用
 
-### 定义
+通过实现IDynamicComponent接口来创建一个动态组件
+
+### 与静态组件的区别
 
 区别于静态组件(IComponent)编译时自动注册到ComponentManager中，动态组件则不会自动注册，需要手动注册/注销
 1. 动态组件需要实现接口: IDynamicComponent

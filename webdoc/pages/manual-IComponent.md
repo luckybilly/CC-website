@@ -2,9 +2,9 @@
 
 组件的接口类，通过创建这个接口的实现类来创建一个组件
 
-### 组件类的作用
+### 组件类(IComponent接口的实现类)的作用
 
-站在CC的视角，组件是一个个组件类(IComponent接口的实现类)，而不是一个个module，module只是存放组件类的容器，在组件类中可直接调用到module中的功能代码而已。
+站在CC的视角，组件是一个个组件类，而不是一个个module，module只是存放组件类的容器，在组件类中可直接调用到module中的功能代码而已。
 
 例如：一个module中有多个组件类，在CC看来就是多个组件
 
@@ -41,9 +41,9 @@ public interface IComponent {
      * cc.getContext() android的context，在组件被跨进程调用时，返回application对象
      * cc.getAction() 调用的action
      * cc.getParams() 调用参数
-     * cc.getCallId() 调用id，用于取消调用
+     * cc.getCallId() 调用id，用于通过CC向调用方发送调用结果
      * @param cc 调用信息
-     * @return 是否延迟回调结果 {@link CC#sendCCResult(String, CCResult)}
+     * @return 是否延迟回调结果 {@link CC#sendCCResult(String callId, CCResult result)}
      *          false:否(同步实现，在return之前回调结果)
      *          true:是(异步实现，本次CC调用将等待回调结果)
      */
@@ -55,6 +55,7 @@ public interface IComponent {
 
 组件类（静态组件类）需要直接实现IComponent接口，具体创建方式及注意事项请参考[2. 创建组件][1]
 
+动态组件类需要实现IDynamicComponent接口，具体说明请戳[这里][2]
 
 ### 自定义子接口或Base基类
 
@@ -101,3 +102,4 @@ ccregister.registerInfo.add([
 
 
 [1]: #/integration-create-component
+[2]: #/manual-IDynamicComponent
