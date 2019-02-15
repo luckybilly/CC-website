@@ -7,7 +7,7 @@ CC是一套Android的组件化框架，由CC核心API类库和cc-register插件�
 当前最新版本| [![Download](https://api.bintray.com/packages/hellobilly/android/cc/images/download.svg)](https://bintray.com/hellobilly/android/cc/_latestVersion)| [![Download](https://api.bintray.com/packages/hellobilly/android/cc-register/images/download.svg)](https://bintray.com/hellobilly/android/cc-register/_latestVersion)
 
 
-<div align=center><img src="https://github.com/luckybilly/CC/raw/master/image/icon.png"/></div>
+<div align=center><img style="width:auto;" src="https://github.com/luckybilly/CC/raw/master/image/icon.png"/></div>
 
 ### CC的特色
 - 一静一动，开发时运行2个app：

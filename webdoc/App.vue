@@ -24,10 +24,11 @@
       <div class="main--right" >
         <router-view class="markdown" :style="{'display': (mobileBrowser & showSideBar) ? 'none' : ''}"></router-view>
         <div class="sidebar-toggel" @click="toggleSidebar()">
-          <img width="20" v-if="showSideBar" src="./sidebar-hide.png"/>
-          <img width="20" v-if="!showSideBar" src="./sidebar-show.png"/>
+          <img width="20" v-if="showSideBar" src="./imgs/sidebar-hide.png"/>
+          <img width="20" v-if="!showSideBar" src="./imgs/sidebar-show.png"/>
         </div>
-        <div v-if="!mobileBrowser" class="qr-block">
+        <div v-if="!mobileBrowser && showQrBlock" class="qr-block">
+          <div style="position:absolute; top:0; right:0;" @click="toggleShowQrBlock()">x</div>
           <img width="100" src="https://github.com/luckybilly/CC/raw/master/image/CC_QQ.png"/>
           <p style="color:blue;">扫码加QQ群交流</p>
         </div>
@@ -44,12 +45,16 @@ export default {
     return {
       itemList: componentList.list,
       showSideBar: true,
-      mobileBrowser: false
+      mobileBrowser: false,
+      showQrBlock: true
     }
   },
   methods: {
     toggleSidebar () {
       this.showSideBar = !this.showSideBar
+    },
+    toggleShowQrBlock () {
+      this.showQrBlock = false
     },
     onSidebarClick () {
       if (this.mobileBrowser) {

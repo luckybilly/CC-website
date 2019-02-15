@@ -100,14 +100,17 @@ export default {
       name: '实践经验',
       list: [
         {
-          name: '先登录再跳转到目标页面',
+          name: '1. 先登录再跳转到目标页面',
           path: '/practice_1'
         },{
-          name: 'Fragment和View的组件化',
+          name: '2. Fragment和View的组件化',
           path: '/practice_2'
         },{
-          name: '让jsBridge更优雅',
+          name: '3. 让jsBridge更优雅',
           path: '/practice_3'
+        },{
+          name: '4. 监听登录状态',
+          path: '/practice_4'
         }
       ]
     },

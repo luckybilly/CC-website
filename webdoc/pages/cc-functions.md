@@ -1,6 +1,7 @@
 ## CC的功能列表
 
 1. 支持组件间相互调用（不只是Activity跳转，支持任意指令的调用/回调）
+	- 可以告别onActivityResult繁琐的写法了
 2. 支持组件调用与Activity、Fragment的生命周期关联
 3. 支持app间跨进程的组件调用(组件开发/调试时可单独作为app运行)
 4. 支持app间调用的开关（默认为关闭状态，调用CC.enableRemoteCC(true)打开）

@@ -221,9 +221,9 @@ body {
 }
 .qr-block{
   width: 100px;
-  height: 100px;
+  height: auto;
   position: fixed;
-  top: 150px;
+  top: 100px;
   right: 10px;
   display: flex;
   flex-direction: column;

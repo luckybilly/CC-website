@@ -245,7 +245,7 @@ android的startActivityForResult的设计也是为了页面传值，在CC组件�
 执行过程如下图所示：
 
 ![CC兼容同步/异步调用和实现原理图](https://user-gold-cdn.xitu.io/2017/12/9/1603a35e88bf52bc?w=1058&h=1159&f=png&s=112868)
-### 2 自定义拦截器(`ICCInterceptor`)实现原理
+### 2 自定义拦截器(ICCInterceptor)实现原理
 - 所有拦截器按顺序存放在调用链(Chain)中
 - 先按照优先级执行所有用户自定义全局拦截器(`ICCGlobalInterceptor`接口实现类)
 - 再按照发起CC调用时添加的顺序执行用户自定义拦截器(`ICCInterceptor`接口实现类)

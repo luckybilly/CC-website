@@ -1,6 +1,6 @@
-# CC框架实践(3): 让jsBridge更优雅
+## CC框架实践(3): 让jsBridge更优雅
 
-## 前言
+### 前言
 
 jsBridge是作为js和java之间通信的桥梁，本身它的职责只是完成通信。
 
@@ -18,7 +18,7 @@ jsBridge是作为js和java之间通信的桥梁，本身它的职责只是完成
     
 *将具体的业务逻辑写在jsBridge模块中，本身就是一个灾难，而且随着业务类型的增加，最后这个Activity/Fragment会变得非常臃肿，而且难以复用*
     
-## CC框架下如何让jsBridge更优雅？
+### CC框架下如何让jsBridge更优雅？
 
 CC框架为所有组件提供了统一的调用入口和回调结果格式。
 
@@ -90,7 +90,7 @@ public class JsBridge {
 6. 同一个组件在不同的app内可以有不同的实现，但需要保持接口协议一致，例如：不同app可以有自己特定的登录组件
 7. 后续添加新功能给js调用时，只要功能提供方实现一下，js中去调用即可，jsbridge组件无需修改
 
-## Tips
+### Tips
 
 
 #### 1. 有些功能必须要在onActivityResult中接收结果，如何在组件内部实现而不影响jsBridge？
@@ -166,7 +166,7 @@ public class JsCallManager {
 6. 在jsBridge中调用JsCallManager.onJsCall方法来实现统一的功能调用
 
 
-## 总结
+### 总结
 
 
 本文介绍了在CC框架下用组件调用的方式让jsBridge实现跟具体业务完全解耦。并给出了非CC框架环境下实现类似效果的思路。

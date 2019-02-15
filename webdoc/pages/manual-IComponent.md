@@ -1,12 +1,21 @@
 ## 类介绍: IComponent.java
 
-组件的接口类，通过创建这个接口的实现类来创建一个组件
+通过创建IComponent接口的实现类来创建一个组件类
 
-### 组件类(IComponent接口的实现类)的作用
+**名字解释**
+
+组件类：实现了IComponent接口的类
+
+组件类是一个组件向其外部暴露服务的唯一入口，外部对组件的所有服务调用都是从该组件类的onCall方法进入到组件内部。
+
+### 组件类的作用
+
+在CC架构中，一个app是由多个组件所组成，一个组件对应一个组件类，一个组件类对应多个服务（action），如下图所示：
+
+
+<img src="../imgs/IComponent.png"/>
 
 站在CC的视角，组件是一个个组件类，而不是一个个module，module只是存放组件类的容器，在组件类中可直接调用到module中的功能代码而已。
-
-例如：一个module中有多个组件类，在CC看来就是多个组件
 
 CC的每一次组件调用，针对的是一个对应的组件类，不管这个组件类在哪个module中、也不管在哪个进程（或App）中
 
@@ -80,8 +89,6 @@ ccregister.registerInfo.add([
   , 'exclude'                 : [ 'com.billy.cc.core.component.'.replaceAll("\\.", "/") + ".*" ]
 ])
 ```
-
-未完待续。。。
 
 
 

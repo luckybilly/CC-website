@@ -288,3 +288,13 @@ code.language-wxml:after {
 .hljs-attr{
   color: #e96900
 }
+
+.markdown img {
+  width: 100%;
+}
+.markdown .auto-width {
+  width: auto;
+}
+
+
+
