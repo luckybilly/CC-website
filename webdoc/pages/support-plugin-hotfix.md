@@ -37,4 +37,11 @@ cc-register 1.0.8开始，可以通过在gradle打包命令中加上ccMain=noMod
 //为demo_component_b打aar包
 ./gradlew :demo_component_b:assembleRelease -PccMain=noModule 
 ```
+
+注：
+~~~
+这种用法对于ext.mainApp=true的module无效，会一直是打apk包
+对于ext.alwaysLib=true的module来说无意义，因为本来就一直是打aar包
+~~~
+
 为了向下兼容， 仍然保留`assemble_aar_for_cc_component`的作用
