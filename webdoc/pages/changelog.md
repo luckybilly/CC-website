@@ -1,7 +1,22 @@
 
 # 更新日志
 
-- 2019.01.30 V2.1.2
+### 2019.02.17 cc-regsiter v1.0.8
+
+新增：在gradle命令中加入ccMain参数来指定当前集成打包的module名称，可用于热修复打包、插件化打包和aar打包
+
+~~~
+格式为：
+  ./gradlew  :$moduleName:$taskName -PccMain=$assembleBuildModuleName
+
+主要用途：
+  1. 用某插件化、热修复框架脚本为demo打补丁包
+    ./gradlew :demo:xxxBuildPatch -PccMain=demo
+  2. 打aar包，相反的用途，指定ccMain为一个不存在的module名称即可，可替代assemble_aar_for_cc_component的作用
+    ./gradlew :demo_component_b:assembleRelease -PccMain=noModule 
+    注意：此用法对于ext.mainApp=true的module无效，对于ext.alwaysLib=true的module来说无意义
+~~~
+### 2019.01.30 V2.1.2
 
 ~~~
 1. 修复主线程同步调用跨进程组件时超时设置失效的问题
@@ -24,7 +39,7 @@
       //支持取值时提供一个默认值
       String name = result.getDataItemWithNoKey("");
 ~~~
-- 2018.10.05 V2.1.0
+### 2018.10.05 V2.1.0
 
 
         1. 在定义组件时可通过实现IMainThread接口指定不同action被调用时component.onCall方法是否在主线程运行
@@ -36,7 +51,7 @@
 [CCUtil](https://github.com/luckybilly/CC/blob/master/cc/src/main/java/com/billy/cc/core/component/CCUtil.java)
 
      
-- 2018.09.16 V2.0.0 全新升级
+### 2018.09.16 V2.0.0 全新升级
 
 
         1. 重构跨进程通信机制，新增支持应用内部跨进程组件调用
@@ -47,7 +62,7 @@
         
 详情请看[升级指南][1]
 
-- 2018.06.04 V1.1.0 重大更新
+### 2018.06.04 V1.1.0 重大更新
 
 
         1. 新增支持全局拦截器： 
@@ -77,12 +92,12 @@
 
 [cc-settings-demo.gradle](https://github.com/luckybilly/CC/blob/master/cc-settings-demo.gradle)
 
-- 2018.05.17 V1.0.0版 Fix issue [#23](https://github.com/luckybilly/CC/issues/23)
+### 2018.05.17 V1.0.0版 Fix issue [#23](https://github.com/luckybilly/CC/issues/23)
 
 
         修复跨app调用组件时传递的参数为null导致`cc.getParamItem(key)`抛异常的问题
 
-- 2018.04.06 更新cc-settings.gradle
+### 2018.04.06 更新cc-settings.gradle
 
 
         1. 废弃ext.runAsApp参数设置，（目前仍然兼容其功能，但不再推荐使用）
@@ -95,18 +110,18 @@
             }
         
 
-- 2018.02.09 V0.5.0版
+### 2018.02.09 V0.5.0版
 
         
         在组件作为app运行时，通过显式调用如下代码来解决在部分设备上无法被其它app调用的问题
         CC.enableRemoteCC(true);//建议在Application.onCreate方法中调用
 
-- 2018.02.07 V0.4.0版
+### 2018.02.07 V0.4.0版
 
         
         异步调用时也支持超时设置(setTimeout)
 
-- 2017.12.23 V0.3.1版
+### 2017.12.23 V0.3.1版
 
         
         1. 为获取CC和CCResult对象中Map里的对象提供便捷方法，无需再进行类型判断和转换
@@ -118,24 +133,24 @@
             
         
 
-- 2017.12.09 V0.3.0版
+### 2017.12.09 V0.3.0版
 
     
         添加Activity及Fragment生命周期关联的功能并添加对应的demo
 
-- 2017.11.29 V0.2.0版
+### 2017.11.29 V0.2.0版
 
 
         将跨进程调用接收LocalSocket信息的线程放入到线程池中
         完善demo
         
-- 2017.11.27 V0.1.1版
+### 2017.11.27 V0.1.1版
     
     
         1. 优化超时的处理流程
         2. 优化异步返回CCResult的处理流程
 
-- 2017.11.24 V0.1.0版 初次发布
+### 2017.11.24 V0.1.0版 初次发布
 
 
 [1]: #/1.x_to_2.x
