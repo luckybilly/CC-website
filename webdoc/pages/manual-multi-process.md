@@ -140,7 +140,10 @@ public class JsBridgeComponent implements IComponent {
 - 如果优雅地面向组件封装jsBridge
 - 如何向所有进程提供一个创建自定义WebView的服务
 
+### 实现原理
 
+CC的跨进程组件调用方案在2.0.0版本时进行了重构，最新的实现方案详情请查阅[CC实现原理][cc-principle]中的第二点第4节
 
 [demo_component_jsbridge]: https://github.com/luckybilly/CC/tree/master/demo_component_jsbridge/src/main/java/com/billy/cc/demo/component/jsbridge
 [调用协议]: #/manual-IComponent
+[cc-principle]: #/article-cc-principle

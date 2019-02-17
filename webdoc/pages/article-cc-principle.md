@@ -271,7 +271,7 @@ ChainProcessor的执行过程可以被timeout和cancel两种事件中止。
 
 ![App之间CC调用流程图](https://github.com/luckybilly/CC/raw/dev_multiprocess/image/lct/lct_cross_app.png)
 
-
+同样适用于App内部进程间的通信
 
 ## 结语
 
