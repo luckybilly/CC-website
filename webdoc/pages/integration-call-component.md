@@ -42,12 +42,7 @@ String callId = CC.obtainBuilder("ComponentA")
         });
 ```
 
-不管是同步调用还是异步调用，都可以通过CCResult获取组件执行的结果
-
-于是，我们可以告别`onActivityResult`繁琐的写法了
-- 不再依赖Activity和Fragment对象来发起页面跳转(startActivityForResult)
-- 不再为Fragment（特别是嵌套使用时）的onActivityResult神坑发愁
-- 回调代码不再是必须写在Activity或Fragment类中了
+不管是同步调用还是异步调用，都能通过CCResult获取组件执行的结果
 
 注：由于同步调用时会占用当前线程直至CCResult返回，所以：
 - 不要<font color="red">在主线程同步调用</font>耗时操作，否则会导致卡住主线程2秒后返回超时的CCResult (code = -9)
@@ -59,4 +54,11 @@ String callId = CC.obtainBuilder("ComponentA")
 
 所以，<font color="red">在主线程中，建议只在确实有需要的时候才使用同步调用</font>
 
+
+---
+
+同时，我们还可以告别`onActivityResult`繁琐的写法了
+- 不再依赖Activity和Fragment对象来发起页面跳转(startActivityForResult)
+- 不再为Fragment（特别是嵌套使用时）的onActivityResult神坑发愁
+- 回调代码不再是必须写在Activity或Fragment类中了，降低代码耦合度
 

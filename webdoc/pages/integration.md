@@ -28,6 +28,7 @@ project.dependencies.add('api', "com.billy.android:cc:2.1.2") //用最新版
 //      3. 开启app内部多进程支持
 //      4. 其它公共配置信息
 
+
 //开启app内部多进程组件调用时启用下面这行代码
 //ccregister.multiProcessEnabled = true
 

@@ -1,27 +1,24 @@
 ## 类介绍: IComponent.java
 
-通过创建IComponent接口的实现类来创建一个组件类
 
 **名字解释**
 
-组件类：实现了IComponent接口的类
+组件类：
+~~~  
+实现了IComponent接口的类就是组件类
 
 组件类是一个组件向其外部暴露服务的唯一入口，外部对组件的所有服务调用都是从该组件类的onCall方法进入到组件内部。
+~~~
+组件调用协议：
+~~~
+组件的实现方与调用方约定的一组规定，其中包含：
+1. 组件名称：componentName, 获取方式：cc.getComponentName()
+2. 服务名称：actionName,    获取方式：cc.getActionName()
+3. 参数列表：params,        获取方式：cc.getParamItem(key)
+4. 返回信息：data,          获取方式：ccResult.getDataItem(key)
 
-### 组件类的作用
-
-在CC架构中，一个app是由多个组件所组成，一个组件对应一个组件类，一个组件类对应多个服务（action），如下图所示：
-
-
-<img src="../imgs/IComponent.png"/>
-
-站在CC的视角，组件是一个个组件类，而不是一个个module，module只是存放组件类的容器，在组件类中可直接调用到module中的功能代码而已。
-
-CC的每一次组件调用，针对的是一个对应的组件类，不管这个组件类在哪个module中、也不管在哪个进程（或App）中
-
-组件类对于组件来说，它起到的作用是：
-
-    组件module创建组件类来定义它将向外提供哪些服务(服务名称：actionName)以及如何提供这些服务(参数及返回值协议)
+申明：不管组件的服务是如何实现，也不管组件在哪个进程，只要组件的调用协议不变，其调用方式及代码都是一样的
+~~~
 
 ### IComponent接口的定义
 
@@ -59,6 +56,24 @@ public interface IComponent {
     boolean onCall(CC cc);
 }
 ```
+
+### 组件类的作用
+
+在CC架构中，一个app是由多个组件所组成，一个组件对应一个组件类，一个组件类对应多个服务（action），如下图所示：
+
+
+<img src="../imgs/IComponent.png"/>
+
+站在CC的视角，一个组件类就是一个组件。 
+
+~~~
+在实践中，我们通常将module作为组件，module中通常包含1个组件类（IComponent的实现类），将当前组件中需要暴露的服务在onCall方法中提供出去
+如果某个module中含有多个组件类，它可以被看做是多个组件（如上图中的module4：它包含组件D及组件E）
+~~~
+
+每一次CC组件调用，最终都会调用到对应组件类的onCall方法，不管这个组件类在哪个module中、也不管它在哪个进程中
+
+
 
 ### 创建组件类
 

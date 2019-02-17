@@ -35,8 +35,8 @@ public interface IDynamicComponent extends IComponent {
 
 因为ComponentManager中注册组件的[数据结构是一个Map][1]
 ~~~
-key		： 组件名称(componentName)
-value	： 组件对象(IComponent对象)
+key     ： 组件名称(componentName)
+value   ： 组件对象(IComponent对象)
 ~~~
 
 所以，动态组件需要保障每个对象的componentName不一样

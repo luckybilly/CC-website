@@ -20,7 +20,7 @@ CC是一套Android的组件化框架，由CC核心API类库和cc-register插件�
 CC是一套基于组件总线的、支持渐进式改造的、支持跨进程调用的、完整的Android组件化框架
 
 - 基于组件总线： 
-    - 不同于市面上种类繁多的路由框架，CC采用了基于组件总线的架构，不依赖于路由([路由 VS 总线][1]
+    - 不同于市面上种类繁多的路由框架，CC采用了基于组件总线的架构，不依赖于路由([路由 VS 总线][1])
 - 支持渐进式改造： 
     - 接入CC后可立即用以组件的方式开发新业务，可单独运行调试开发，通过跨app的方式调用项目中原有功能
     - 不需要修改项目中现有的代码，只需要新增一个IComponent接口的实现类（组件类）即可支持新组件的调用
@@ -78,8 +78,11 @@ public class ComponentA implements IComponent {
       //指定组件的名称
       return "ComponentA";
   }
+
   @Override
   public boolean onCall(CC cc) {
+    //在此处将组件内部的服务暴露给外部调用
+    //组件内部的逻辑与外部完全解耦
     String actionName = cc.getActionName();
     switch (actionName) {
       case "showActivity": //响应actionName为"showActivity"的组件调用
@@ -113,6 +116,18 @@ CC于2018年9月16日升级到2.0.0版，重构了跨进程通信机制和自动
 
 在[CC][10]和[CCResult][11]页面，您将了解到更丰富的组件调用及组件调用结果相关的API
 
+在[IComponent][IComponent]和[IDynamicComponent][IDynamicComponent]页面，您可以更深入地了解CC框架中的静态组件和动态组件及其使用方法
+
+在[开启多进程支持][12]页面，可以了解到在如何使用CC来支持跨进程组件调用
+
+更多内容请点击左侧目录中的链接查看。
+
+### 参与 & 贡献
+如果您在使用中遇到疑问或者有什么建议，都可以[在github上给我提issue][issue]，也可以扫描右上角的二维码加QQ交流群(686844583)
+
+如果能贡献PR，那就更好了
+
+最后：[给CC点一个Star][star]也是对我最好的鼓励
 
 
 [1]: #/article-router_vs_bus
@@ -126,4 +141,9 @@ CC于2018年9月16日升级到2.0.0版，重构了跨进程通信机制和自动
 [9]: #/manual-IGlobalCCInterceptor
 [10]: #/manual-CC
 [11]: #/manual-CCResult
+[12]: #/manual-multi-process
+[IComponent]: #/manual-IComponent
+[IDynamicComponent]: #/manual-IDynamicComponent
+[issue]: https://github.com/luckybilly/CC/issues/new
+[star]: https://github.com/luckybilly/CC
 
