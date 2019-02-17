@@ -93,6 +93,9 @@ export default {
         },{
           name: 'IActionProcessor',
           path: '/manual-IActionProcessor'
+        },{
+          name: '支持热修复、插件化及aar打包',
+          path: '/support-plugin-hotfix'
         }
       ]
     },
