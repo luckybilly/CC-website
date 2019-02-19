@@ -17,7 +17,8 @@ export default {
           path: '/changelog'
         },{
           name: 'Q & A',
-          path: '/q&a'
+          path: '/q&a',
+          nick: '常见问题'
         }
       ]
     },
@@ -47,7 +48,8 @@ export default {
       list: [
         {
           name: '2.0版升级指南',
-          path: '/1.x_to_2.x'
+          path: '/1.x_to_2.x',
+          nick: '1.x.x -> 2.x.x'
         }
       ]
     },
@@ -55,38 +57,49 @@ export default {
       name: '知识点手册',
       list: [
         {
-          name: '状态码清单',
-          path: '/cc-error-code-list'
-        },{
           name: 'CC',
-          path: '/manual-CC'
+          path: '/manual-CC',
+          nick: '组件调用入口'
         },{
           name: 'CCResult',
-          path: '/manual-CCResult'
+          path: '/manual-CCResult',
+          nick: '组件调用结果'
+        },{
+          name: '状态码清单',
+          path: '/cc-error-code-list',
+          nick: 'CCResult状态码'
         },{
           name: 'IComponent',
-          path: '/manual-IComponent'
+          path: '/manual-IComponent',
+          nick: '组件类'
         },{
           name: 'IDynamicComponent',
-          path: '/manual-IDynamicComponent'
+          path: '/manual-IDynamicComponent',
+          nick: '动态组件类'
         },{
           name: 'IComponentCallback',
-          path: '/manual-IComponentCallback'
+          path: '/manual-IComponentCallback',
+          nick: '异步回调'
         },{
           name: 'ICCInterceptor',
-          path: '/manual-ICCInterceptor'
+          path: '/manual-ICCInterceptor',
+          nick: '拦截器'
         },{
           name: 'IGlobalCCInterceptor',
-          path: '/manual-IGlobalCCInterceptor'
+          path: '/manual-IGlobalCCInterceptor',
+          nick: '全局拦截器'
         },{
           name: 'IMainThread',
-          path: '/manual-IMainThread'
+          path: '/manual-IMainThread',
+          nick: '主线程运行'
         },{
           name: 'IParamJsonConverter',
-          path: '/manual-IParamJsonConverter'
+          path: '/manual-IParamJsonConverter',
+          nick: 'Json转换器'
         },{
           name: 'BaseForwardInterceptor',
-          path: '/manual-BaseForwardInterceptor'
+          path: '/manual-BaseForwardInterceptor',
+          nick: '调用转发'
         },{
           name: '开启多进程支持',
           path: '/manual-multi-process'
@@ -110,10 +123,12 @@ export default {
           path: '/practice_2'
         },{
           name: '3. 让jsBridge更优雅',
-          path: '/practice_3'
+          path: '/practice_3',
+          nick: '面向组件封装'
         },{
           name: '4. 监听登录状态',
-          path: '/practice_4'
+          path: '/practice_4',
+          nick: '应用动态组件'
         }
       ]
     },

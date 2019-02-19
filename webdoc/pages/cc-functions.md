@@ -24,3 +24,5 @@
     - 同步返回或异步回调的CCResult对象一定不为null，避免空指针
 16. 支持在组件中为不同actionName指定是否在主线程中运行
 17. 支持组件调用的转发（BaseForwardInterceptor）
+18. 支持在Kotlin中使用
+19. 兼容各种热修复框架和插件化框架

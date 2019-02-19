@@ -58,8 +58,9 @@ body {
   color: #999;
 }
 .nick{
+  color: #455a64;
   opacity: .4;
-  font-size: 13px;
+  font-size: 12px;
 }
 #app .main-header .main-header-nav {
   margin: 0;
@@ -151,8 +152,8 @@ body {
 #app .main- .main--left ul li a {
   font-size: 14px;
   color: #5B94DC;
-  line-height: 20px;
-  height: 20px;
+  line-height: 30px;
+  height: 30px;
   margin: 0;
   padding: 0 0 0 35px;
   text-decoration: none;
@@ -224,7 +225,7 @@ body {
   height: auto;
   position: fixed;
   top: 100px;
-  right: 10px;
+  right: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
