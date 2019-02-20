@@ -22,8 +22,10 @@ ccregister.excludeProcessNames = [':pushservice', ':processNameB']
 在组件类（`IComponent`实现类）上添加一个注解，标明其所在进程（在主进程运行组件无需添加注解）
 
 - 无注解               ： 该组件类在主进程中运行
-- @SubProcess(":web") ： 该组件类运行在packageName:web子进程
-- @AllProcess         ： 该组件在所有进程中都存在，每个进程都调用自身进程内部的该组件对象
+- @SubProcess(":web") ： 该组件类运行在packageName:web子进程，demo请戳[这里][sub_process]
+- @AllProcess         ： 该组件类在App内所有进程中都存在一个对象，调用该组件时，调用的是调用方所在进程中的组件类对象
+    - @AllProcess注解可用于在多进程环境下提供:在调用方所在进程中创建自定义Fragment/View等对象的服务
+    - @AllProcess注解的demo请戳[这里][all_process]
 
 示例代码如下
 ```java
@@ -147,3 +149,6 @@ CC的跨进程组件调用方案在2.0.0版本时进行了重构，最新的实�
 [demo_component_jsbridge]: https://github.com/luckybilly/CC/tree/master/demo_component_jsbridge/src/main/java/com/billy/cc/demo/component/jsbridge
 [调用协议]: #/manual-IComponent
 [cc-principle]: #/article-cc-principle
+[sub_process]: https://github.com/luckybilly/CC/blob/master/demo_component_jsbridge/src/main/java/com/billy/cc/demo/component/jsbridge/WebComponent.java
+[all_process]: https://github.com/luckybilly/CC/blob/master/demo_component_jsbridge/src/main/java/com/billy/cc/demo/component/jsbridge/JsBridgeComponent.java
+
