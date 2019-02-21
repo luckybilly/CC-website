@@ -11,6 +11,11 @@
 
     <div class="main-">
       <div class="main--left" :class="!showSideBar ? 'sidebar-hidden' : '' ">
+        <div style="text-align:center;margin-bottom:10px;"> 
+          <a href="https://www.hiapp.net/fromcc" target="_blank">
+            <img style="width:200px;" src="./imgs/hiapp_cc.png"/>
+          </a>
+        </div>
         <ul v-for="(item, index) in itemList">
           <li v-if="item.name" class="group-title">{{ item.name }}</li>
           <li v-for="(it, i) in item.list" @click="onSidebarClick">

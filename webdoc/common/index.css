@@ -236,3 +236,19 @@ body {
   color: #666;
   margin-top: 10px;
 }
+
+#app .main-footer {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  /*-webkit-box-shadow: 0 2px 8px #f0f1f2;
+  box-shadow: 0 2px 8px #f0f1f2;*/
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+  z-index: 10;
+  height: 25px;
+  color: #444;
+}
+#app .main-footer .cc-ad-block{
+  position: absolute;
+  right: 10px;
+}

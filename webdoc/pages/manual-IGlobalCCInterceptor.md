@@ -35,6 +35,16 @@ CC.registerGlobalInterceptor(IGlobalCCInterceptor interceptor)
 //注销一个全局拦截器
 CC.unregisterGlobalInterceptor(IGlobalCCInterceptor interceptor) 
 ```
+
+### 调用组件时禁用全局拦截器
+```java
+CC.obtainBuilder("componentName")
+	.setActionName("actionName")
+	.withoutGlobalInterceptor()	//禁用所有全局拦截器
+	.addInterceptor(new MyInterceptor()) //禁用全局拦截器的同时，可以添加普通拦截器
+	.build()
+	.callAsync();
+```
  
 ### 注意事项
 
