@@ -13,7 +13,7 @@
       <div class="main--left" :class="!showSideBar ? 'sidebar-hidden' : '' ">
         <div style="text-align:center;margin-bottom:10px;"> 
           <a href="https://www.hiapp.net/fromcc" target="_blank">
-            <img style="width:200px;" src="./imgs/hiapp_cc.png"/>
+            <img style="width:200px;" src="http://hiapp-public.oss-cn-hangzhou.aliyuncs.com/adimg/hiapp_cc.png"/>
           </a>
         </div>
         <ul v-for="(item, index) in itemList">
