@@ -45,6 +45,21 @@ project.dependencies.add('api', "com.billy.android:cc:2.1.2") //用最新版
 //])
 ```
 
+注意：github源码根目录中有3个 'cc-settings`-xxx`.gradle' 文件，其作用说明如下：
+```groovy
+//1.x.x版本用户使用的配置文件
+cc-settings.gradle 
+
+//2.x.x版本用户使用的配置文件
+//	下载此文件到自己工程根目录后，可按照此文件中的注释内容的引导添加当前项目所需的配置
+cc-settings-2.gradle 
+
+//源码中demo项目使用的配置文件
+//	在cc-settings-2.gradle基础上添加了demo中需要使用的配置
+//	用户在使用时无需创建此文件，可直接在cc-settings-2.gradle文件中添加自己项目中需要使用的配置
+cc-settings-demo.gradle 
+```
+
 ### 3. 开启debug模式
 debug模式下，会在Logcat中输出一些CC框架内部的执行日志，开启方式为：
 ```java
