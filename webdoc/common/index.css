@@ -111,6 +111,7 @@ body {
   height: auto;
   zoom: 1;
   display: flex;
+  overflow-y: hidden;
   flex-direction: row;
 }
 #app .main- .main--left {

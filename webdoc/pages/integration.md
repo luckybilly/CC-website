@@ -30,12 +30,14 @@ project.dependencies.add('api', "com.billy.android:cc:2.1.2") //用最新版
 
 
 //开启app内部多进程组件调用时启用下面这行代码
+//文档地址：https://luckybilly.github.io/CC-website/#/manual-multi-process
 //ccregister.multiProcessEnabled = true
 
 //开启app内部多进程组件调用时，可以启用下方的配置排除一些进程
 //ccregister.excludeProcessNames = [':pushservice', ':processNameB']
 
 //按照如下格式添加自定义注册项，可添加多个（也可每次add一个，add多次）
+// 文档地址： https://luckybilly.github.io/CC-website/#/manual-IActionProcessor
 //ccregister.registerInfo.add([
 //        //在自动注册组件的基础上增加：自动注册组件B的processor
 //        'scanInterface'             : 'com.billy.cc.demo.component.b.processor.IActionProcessor'
