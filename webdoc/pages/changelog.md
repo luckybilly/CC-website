@@ -1,6 +1,11 @@
 
 # 更新日志
 
+### 2019.04.10 V2.1.5
+
+bugfix: 修复在子进程被杀死的情况下调用该子进程中的组件时出现的crash
+
+cc-register V1.0.9：新增class文件扫描缓存功能，贡献者: [zhangkangbin](https://github.com/zhangkangbin)
 
 ### 2019.02.18 V2.1.4
 
