@@ -94,7 +94,7 @@ export default {
     '$route' () {
       if (window._czc) {
         let location = window.location;//路由变化
-        let contentUrl = location.hash;//自定义当前url，可带上路由以此区分每个页面
+        let contentUrl = location.pathname + location.hash;//自定义当前url，可带上路由以此区分每个页面
         console.log(contentUrl);
         let refererUrl = '/';
         window._czc.push(["_setAutoPageview", false]);
