@@ -1,8 +1,25 @@
 ## 开启多进程支持
 
-默认情况下未开启App内部多进程的支持
+CC支持跨进程调用组件：
+- App内部
+- 跨App（仅适用于开发期间使用）
 
-### 开启多进程支持的方法
+默认情况下，多进程的支持为**关闭状态**
+
+### 开启跨app组件调用支持的方法
+
+单个组件module独立以application方式编译运行时，想要与主app之间相互调用，需要二者同时开启跨app组件调用功能。
+
+开启方式：
+
+```java
+CC.enableRemoteCC(true); //开启跨app组件调用
+```
+
+再次强调一下：跨app组件调用支持功能仅适用于开发期间，打生产包时请关闭此功能（`CC.enableRemoteCC(false);`）。
+
+### 开启App内部多进程支持的方法
+
 修改`cc-settings-2.gradle`，添加：
 ```groovy
 //开启app内部多进程组件调用
@@ -17,7 +34,7 @@ ccregister.multiProcessEnabled = true
 ccregister.excludeProcessNames = [':pushservice', ':processNameB']
 ```
 
-### 多进程相关的注解
+### App内部多进程相关的注解
 
 在组件类（`IComponent`实现类）上添加一个注解，标明其所在进程（在主进程运行组件无需添加注解）
 
